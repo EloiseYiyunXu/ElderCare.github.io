@@ -3,12 +3,12 @@ import openai
 import json
 import time
 
-openai.api_key = "sk-proj-IdwhTgMVcgQpbIvsQLjnT3BlbkFJKlMtRMA8EbjZfkm3qTAV"
+openai.api_key = "OPENAI_API_KEY"
 
 class Profile:
     def __init__(self, prompt):
         self.prompt = prompt
-        self.key = os.getenv("sk-proj-IdwhTgMVcgQpbIvsQLjnT3BlbkFJKlMtRMA8EbjZfkm3qTAV")
+        self.key = os.getenv("OPENAI_API_KEY")
         self.max_try = 0
         self.model = "gpt-3.5-turbo"
 
@@ -142,21 +142,7 @@ class Profile:
             self.max_try += 1
             if self.max_try == 5:
                 return "unknow"
-            
-    """def finalInfo(self):
-        name = self.getName()
-        age = self.getAge()
-        gender = self.getGender()
-        ethcity = self.getEthcity()
-        smoke_status = self.getSmokeStatus()
-        BMI = self.getBMI()
-        blood_pressure = self.getBloodPressure()
-        blood_glucose = self.getBloodGlucose()
-        diabetes = self.getDiabetes()
-        heart_disease = self.getHeartDisease()
-        return (name, age, gender, ethcity, smoke_status, BMI, blood_pressure, blood_glucose, diabetes, heart_disease)"""
-    
-
+                
     def finalInfo(self):
         name = self.getName()
         age = self.getAge()
