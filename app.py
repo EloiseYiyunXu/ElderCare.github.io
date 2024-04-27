@@ -16,7 +16,7 @@ app.secret_key = os.urandom(24)
 
 @app.route('/')
 def my_form():
-    return render_template('response2.html')
+    return render_template('response.html')
 
 @app.route('/', methods=['POST'])
 def my_form_post():
@@ -34,7 +34,7 @@ def my_form_post():
         )
         session['chat_history'].append({'role': 'system', 'content': completion.choices[0].message.content})
         session.modified = True
-        return render_template('response2.html', response=completion.choices[0].message.content)
+        return render_template('response.html', response=completion.choices[0].message.content)
     except RateLimitError:
         return jsonify({'error': 'Rate limit reached'}), 429
     except Exception as e:
