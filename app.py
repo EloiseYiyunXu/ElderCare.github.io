@@ -9,7 +9,7 @@ app = Flask(__name__, static_url_path='/static')
 load_dotenv(find_dotenv())
 
 client = OpenAI(
-    api_key='sk-proj-IdwhTgMVcgQpbIvsQLjnT3BlbkFJKlMtRMA8EbjZfkm3qTAV'
+    api_key= "OPENAI_API_KEY"
 )
 
 app.secret_key = os.urandom(24)
